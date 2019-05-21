@@ -1,0 +1,30 @@
+<%- include('partials/head.ejs') %>
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/snippet.css">
+</head>
+
+<body>
+    <%- include('partials/navigation.ejs') %>
+
+    <main>
+        <%- messages('flash_messages', locals) %>
+        <form class="snippet-form" action="/edit_snippet" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" value="<%= snippet.title %>">
+            </div>
+            <div class="form-control">
+                <label for="snippet">Snippet</label>
+                <textarea name="snippet" id="snippet" rows="20" cols="100"><%= snippet.snippet %></textarea>
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" rows="5"><%= snippet.description %></textarea>
+                <input type="hidden" value="<%= snippet._id %>" name="snippetId">
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn success" type="submit">Update Snippet</button>
+            <a href="/snippets/<%= snippet._id %>" class="btn">Back to Details</a>
+        </form>
+    </main>
+    <%- include('partials/closer.ejs') %>

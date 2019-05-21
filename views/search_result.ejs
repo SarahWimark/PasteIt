@@ -1,0 +1,32 @@
+<%- include('partials/head.ejs') %>
+<link rel="stylesheet" href="/css/snippet.css">
+</head>
+
+<body>
+    <%- include('partials/navigation.ejs') %>
+
+    <main>
+        <%- messages('flash_messages', locals) %>
+        <% if (snippets.length > 0) { %>
+        <div class="grid">
+            <% for (let snippet of snippets) { %>
+            <article class="card snippet-item">
+                <div class="card_content">
+                    <h1 class="snippet_title"><%= snippet.title %></h1>
+                    <hr>
+                    <p class="snippet_text">
+                        <pre><code><%= snippet.snippet %></code></pre>
+                    </p>
+                    <div class="card_actions">
+                        <a href="/snippets/<%= snippet._id %>" class="btn">Details</a>
+                    </div>
+                </div>
+            </article>
+            <% } %>
+        </div>
+        <% } else { %>
+        <h1>No Snippets Found!</h1>
+        <% } %>
+
+    </main>
+    <%- include('partials/closer.ejs') %>

@@ -1,0 +1,8 @@
+
+<div id="messages">
+    <% Object.keys(messages).forEach(function (type) { %>
+      <% messages[type].forEach(function (message) { %>
+        <div class="flash-message <%= type %>-message"><%= message %></div>
+      <% }) %>
+    <% }) %>
+</div>

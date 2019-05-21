@@ -1,0 +1,47 @@
+{
+  "name": "sv222da-examination-2",
+  "version": "1.0.0",
+  "description": "Examination 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "devstart": "nodemon --inspect app.js",
+    "lint": "standard | snazzy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1dv023/sv222da-examination-2.git"
+  },
+  "author": "Sara Vimark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1dv023/sv222da-examination-2/issues"
+  },
+  "homepage": "https://github.com/1dv023/sv222da-examination-2#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.1.1",
+    "csurf": "^1.9.0",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-csp-header": "^2.2.0",
+    "express-hbs": "^2.1.2",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "helmet-csp": "^2.7.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "snazzy": "^8.0.0",
+    "standard": "^12.0.1"
+  },
+  "nodemonConfig": {
+    "ext": "js,json,hbs,html,css"
+  }
+}

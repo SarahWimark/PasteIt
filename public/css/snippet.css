@@ -1,0 +1,39 @@
+.snippet-form {
+    width: 40rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.snippet_title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.snippet_text {
+    font-size: 24px;
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+    white-space: pre-line;
+}
+
+.snippet_description {
+    margin: 10px;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+.snippet_username {
+    margin: 15px;
+    padding: 5px;
+    color: blue;
+    text-shadow: 0 1px 0 #000;
+}
+.snippet_date {
+    margin: 15px;
+    padding: 5px;
+    color: orange;
+    text-shadow: 0 1px 0 #000;
+}

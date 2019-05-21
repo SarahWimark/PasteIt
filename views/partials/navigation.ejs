@@ -1,0 +1,39 @@
+<nav class="main-header_nav">
+    <ul class="nav_item-list">
+        <li class="nav_item">
+            <a class="<%= path === '/snippets' ? 'active' : '' %>" href="/snippets">Overview</a>
+        </li>
+        <% if (authenticated) { %>
+        <li class="nav_item">
+            <a class="<%= path === '/my_snippets' ? 'active' : '' %>" href="/my_snippets">My snippets</a>
+        </li>
+        <li class="nav_item">
+            <a class="<%= path === '/add_snippet' ? 'active' : '' %>" href="/add_snippet">Add snippet</a>
+        </li>
+        <% } %>
+    </ul>
+    <ul class="nav_item-list right">
+            <div class="search_container">
+                    <form action="/search" method="POST" >
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
+                    </div>
+        <% if (!authenticated) { %>
+        <li class="nav_item">
+            <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+        </li>
+        <li class="nav_item">
+            <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a>
+        </li>
+        <% } else { %>
+        <li class="nav_item">
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+        <% } %>
+    </ul>
+</nav>

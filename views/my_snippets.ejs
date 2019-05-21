@@ -1,0 +1,40 @@
+<%- include('partials/head.ejs') %>
+<link rel="stylesheet" href="/css/snippet.css">
+</head>
+
+<body>
+    <%- include('partials/navigation.ejs') %>
+
+    <main>
+        <%- messages('flash_messages', locals) %>
+        <% if (snippets.length > 0) { %>
+        <div class="grid">
+            <% for (let snippet of snippets) { %>
+            <article class="card">
+                <div class="card_content">
+                    <h1 class="snippet_title"><%= snippet.title %></h1>
+                    <hr>
+                    <p class="snippet_text">
+                        <pre><code><%= snippet.snippet %></code></pre>
+                    </p>
+                    <p class="snippet_description"><%= snippet.description %></p>
+                    <hr>
+                    <div class="card_actions">
+                        <a href="/edit_snippet/<%= snippet._id %>" class="btn success">Edit Snippet</a>
+                        <form action="/delete_snippet" method="POST">
+                            <input type="hidden" value="<%= snippet._id %>" name="snippetId">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button class="btn danger" type="submit">Delete Snippet</button>
+                        </form>
+                        <a href="/snippets" class="btn">Back to Overview</a>
+                    </div>
+                </div>
+            </article>
+            <% } %>
+        </div>
+        <% } else { %>
+        <h1>No Snippets Found!</h1>
+        <% } %>
+
+    </main>
+    <%- include('partials/closer.ejs') %>
