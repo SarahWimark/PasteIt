@@ -33,7 +33,7 @@
     "express-messages": "^1.0.1",
     "express-session": "^1.15.6",
     "helmet-csp": "^2.7.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.4.19"
   },
   "devDependencies": {
