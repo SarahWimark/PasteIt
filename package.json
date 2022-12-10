@@ -27,7 +27,7 @@
     "csurf": "^1.9.0",
     "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-csp-header": "^2.2.0",
     "express-hbs": "^2.1.2",
     "express-messages": "^1.0.1",
